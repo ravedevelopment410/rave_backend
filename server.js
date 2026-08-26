@@ -9,6 +9,7 @@ import contactRoutes from './routes/contactRoutes.js';
 import subscriberRoutes from './routes/subscriberRoutes.js';
 import sliderRoutes from './routes/sliderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
 dotenv.config();
 
@@ -48,6 +49,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/newsletter', subscriberRoutes);
 app.use('/api/sliders', sliderRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 
 // Health check endpoint

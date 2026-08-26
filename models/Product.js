@@ -47,7 +47,11 @@ const productSchema = new mongoose.Schema(
     },
     features: {
       type: [String],
-      default: ['100% Organic', 'Cruelty Free', 'Eco-Friendly Packaging', 'Dermatologist Tested'],
+      default: [],
+    },
+    specifications: {
+      type: String,
+      default: '',
     },
     inStock: {
       type: Boolean,

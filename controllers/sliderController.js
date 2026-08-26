@@ -1,22 +1,7 @@
 import mongoose from 'mongoose';
 import Slider from '../models/Slider.js';
 
-export const fallbackSliders = [
-  {
-    _id: 'slider-av-1',
-    badge: '📺 RAVE SERVICES - Commercial AV Solutions',
-    title: 'Interactive Flat Panels & 4K Laser Projectors.',
-    subtitle: 'Authorized distributor of commercial Touchbooks, Active LEDs, and Video Conferencing equipment.',
-    btnText: 'Explore Products',
-    btnLink: '/products',
-    secondaryBtnText: 'Contact AV Team',
-    secondaryBtnLink: '/contact',
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
-    floatingText: 'Authorized AV Partner',
-    isActive: true,
-    order: 1,
-  }
-];
+export const fallbackSliders = [];
 
 // @desc    Get all active sliders
 // @route   GET /api/sliders
