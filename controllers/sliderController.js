@@ -3,47 +3,19 @@ import Slider from '../models/Slider.js';
 
 export const fallbackSliders = [
   {
-    _id: 'slider-1',
-    badge: '🌿 100% Certified Botanical Wellness',
-    title: 'Pure Botanical Care for Radiant Skin & Soul.',
-    subtitle: 'Discover Aravez — artisanal skincare, herbal adaptogens, and organic loose-leaf teas consciously crafted from wildcrafted earth botanicals.',
-    btnText: 'Shop Best Sellers',
+    _id: 'slider-av-1',
+    badge: '📺 RAVE SERVICES - Commercial AV Solutions',
+    title: 'Interactive Flat Panels & 4K Laser Projectors.',
+    subtitle: 'Authorized distributor of commercial Touchbooks, Active LEDs, and Video Conferencing equipment.',
+    btnText: 'Explore Products',
     btnLink: '/products',
-    secondaryBtnText: 'Explore Offers (Up to 30% OFF)',
-    secondaryBtnLink: '/offers',
-    image: 'https://images.unsplash.com/photo-1608248597359-009a25b6a716?auto=format&fit=crop&w=1200&q=80',
-    floatingText: 'Code: ARAVEZ20 (20% OFF)',
+    secondaryBtnText: 'Contact AV Team',
+    secondaryBtnLink: '/contact',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+    floatingText: 'Authorized AV Partner',
     isActive: true,
     order: 1,
-  },
-  {
-    _id: 'slider-2',
-    badge: '✨ Ancient Ayurvedic Intelligence',
-    title: 'Restorative Herbal Elixirs & Adaptogen Tonics.',
-    subtitle: 'Calm daily stress, awaken cellular longevity, and fortify immune resilience with sacred Himalayan botanicals and Shilajit drops.',
-    btnText: 'Explore Herbal Wellness',
-    btnLink: '/products?category=Herbal+Wellness',
-    secondaryBtnText: 'Read Our Story',
-    secondaryBtnLink: '/about',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80',
-    floatingText: '100% Wildcrafted Himalayan Herbs',
-    isActive: true,
-    order: 2,
-  },
-  {
-    _id: 'slider-3',
-    badge: '🍵 Mountain Cloud-Forest Harvest',
-    title: 'Artisan Loose-Leaf Organic Teas & Infusions.',
-    subtitle: 'Slow down with high-elevation organic green teas, soothing French lavender blossoms, and fragrant night-blooming jasmine.',
-    btnText: 'Discover Tea Collection',
-    btnLink: '/products?category=Organic+Teas',
-    secondaryBtnText: 'View Tea Deals',
-    secondaryBtnLink: '/offers',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80',
-    floatingText: 'Zero Artificial Aromas • Biodegradable',
-    isActive: true,
-    order: 3,
-  },
+  }
 ];
 
 // @desc    Get all active sliders
@@ -52,9 +24,7 @@ export const getSliders = async (req, res) => {
   try {
     if (mongoose.connection.readyState === 1) {
       const sliders = await Slider.find({ isActive: true }).sort({ order: 1, createdAt: -1 });
-      if (sliders.length > 0) {
-        return res.json({ success: true, count: sliders.length, data: sliders });
-      }
+      return res.json({ success: true, count: sliders.length, data: sliders });
     }
     return res.json({ success: true, count: fallbackSliders.length, data: fallbackSliders });
   } catch (error) {
