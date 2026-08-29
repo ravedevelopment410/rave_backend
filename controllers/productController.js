@@ -15,11 +15,12 @@ export const getProducts = async (req, res) => {
         query.category = category;
       }
 
-      if (search) {
+      if (search && search !== 'undefined' && search !== 'null' && search.trim()) {
+        const cleanSearch = search.trim();
         query.$or = [
-          { name: { $regex: search, $options: 'i' } },
-          { description: { $regex: search, $options: 'i' } },
-          { tagline: { $regex: search, $options: 'i' } },
+          { name: { $regex: cleanSearch, $options: 'i' } },
+          { description: { $regex: cleanSearch, $options: 'i' } },
+          { tagline: { $regex: cleanSearch, $options: 'i' } },
         ];
       }
 
