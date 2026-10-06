@@ -77,6 +77,9 @@ app.get('/', (req, res) => {
         • <code>GET /api/offers</code> - Promotional deals & coupons<br/>
         • <code>POST /api/contact</code> - Submit inquiries<br/>
         • <code>POST /api/newsletter/subscribe</code> - Newsletter signup<br/>
+        • <code>POST /api/payment/create-order</code> - Razorpay payment orders<br/>
+        • <code>POST /api/payment/verify-payment</code> - Verify payment signature<br/>
+        • <code>GET /api/orders</code> - Customer orders manager<br/>
         • <code>GET /api/health</code> - Server status
       </div>
     </div>
